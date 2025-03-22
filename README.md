@@ -1,7 +1,7 @@
 TO-DO App
 
-Simple todo app using HTML, JS, and Go as a web server and Postgres DB.
-Containerized it using Docker and deployed it using docker-compose.
+A simple ToDo app built with HTML, JavaScript, and Go as the web server, using PostgreSQL as the database.
+The app is containerized using Docker and orchestrated with Docker Compose for deployment
 
 Commands
 
