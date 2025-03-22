@@ -18,7 +18,8 @@ then in main directory
 docker-compose up --build
 
 ------------------------------------------------------------------------------
-Then frontend will be listen on localhost:3000
+Then frontend will be listening on localhost:3000
+
 and go in localhost:8008/tasks/
 
 
