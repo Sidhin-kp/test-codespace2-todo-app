@@ -12,8 +12,11 @@ go mod init todoapp
 go mod tidy
 
 
+then in main directory
+
+
 docker-compose up --build
 
 ------------------------------------------------------------------------------
-Then fromtend will listen on localhost:3000
+Then frontend will be listen on localhost:3000
 and go in localhost:8008/tasks/
