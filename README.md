@@ -20,3 +20,6 @@ docker-compose up --build
 ------------------------------------------------------------------------------
 Then frontend will be listen on localhost:3000
 and go in localhost:8008/tasks/
+
+
+docker-compose down -v    - for destroying
