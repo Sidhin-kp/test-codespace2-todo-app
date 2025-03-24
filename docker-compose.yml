@@ -18,27 +18,27 @@ services:
       - "8080:8080"
     depends_on:
       db:
-        condition: service_healthy   # ✅ Wait for DB to be healthy
+        condition: service_healthy  # ✅ Wait for DB to be healthy
     environment:
-      - DB_HOST=db
-      - DB_USER=myuser
-      - DB_PASSWORD=mypassword
-      - DB_NAME=mydatabase
+      - DB_HOST=db  # Directly reference service name 'db' for backend
+      - DB_USER=${DB_USER}  # Reference from .env file
+      - DB_PASSWORD=${DB_PASSWORD}  # Reference from .env file
+      - DB_NAME=${DB_NAME}  # Reference from .env file
 
   db:
     image: postgres:latest
     environment:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
-      - POSTGRES_DB=mydatabase
+      - POSTGRES_USER=${DB_USER}  # Reference from .env file
+      - POSTGRES_PASSWORD=${DB_PASSWORD}  # Reference from .env file
+      - POSTGRES_DB=${DB_NAME}  # Reference from .env file
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:  # ✅ Ensures PostgreSQL is ready before backend starts
-      test: ["CMD-SHELL", "pg_isready -U myuser -d mydatabase"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
       interval: 5s
       retries: 5
       timeout: 3s
 
 volumes:
   pgdata:
-
+    driver: local
