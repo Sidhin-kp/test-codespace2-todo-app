@@ -34,7 +34,7 @@ func main() {
 	handler := c.Handler(mux)
 
 	// Start the HTTP server
-	fmt.Println("✅ Server is running on port 8080...")
-	log.Fatal(http.ListenAndServe(":8080", handler))
+	fmt.Println("✅ Server is running on port 9000...")
+	log.Fatal(http.ListenAndServe(":9000", handler))
 }
 
