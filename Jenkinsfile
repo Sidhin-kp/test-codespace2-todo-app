@@ -17,13 +17,13 @@ pipeline {
 
         stage('Build Backend Image') {
             steps {
-                sh 'docker build -t -f backend/Dockerfile.backend backend/'
+                sh 'docker build -t $DOCKER_IMAGE_BACKEND -f backend/Dockerfile.backend backend/'
             }
         }
 
         stage('Build Frontend Image') {
             steps {
-                sh 'docker build -t -f frontend/Dockerfile.frontend frontend/'
+                sh 'docker build -t $DOCKER_IMAGE_FRONTEND -f frontend/Dockerfile.frontend frontend/'
             }
         }
 
