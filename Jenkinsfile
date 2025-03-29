@@ -9,7 +9,9 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Sidhin-kp/test-codespace2-todo-app.git'
+                git branch: 'main',
+                    credentialsId: 'github-creds',
+                    url: 'https://github.com/Sidhin-kp/test-codespace2-todo-app.git'
             }
         }
 
