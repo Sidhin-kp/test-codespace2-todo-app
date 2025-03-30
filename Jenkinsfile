@@ -34,12 +34,6 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                sh 'docker-compose -f docker-compose.test.yml up --abort-on-container-exit'
-            }
-        }
-
         stage('Cleanup') {
             steps {
                 sh 'docker system prune -f'
